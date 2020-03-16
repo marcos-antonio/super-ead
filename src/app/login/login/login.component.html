@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div fxFlex fxLayoutAlign="center center" >
+
+  <mat-card class="login-card" fxLayout="column">
+
+    <form [formGroup]="formLogin" (ngSubmit)="formLogin.valid && submitForm(formLogin.value)" fxLayout="column">
+      <mat-form-field>
+				<input formControlName="username" matInput placeholder="Username" required/>
+				<mat-error>Username is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+				<input formControlName="password" matInput placeholder="Password" type="password" required />
+				<mat-error>Password is required</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary">Login</button>
+    </form>
+
+  </mat-card>
+
+</div>
